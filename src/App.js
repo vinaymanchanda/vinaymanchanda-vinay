@@ -5,7 +5,7 @@ import Container from "./components/container";
 
 function App() {
   return (
-    <div >
+    <div>
       <Container/>
     </div>
   );
