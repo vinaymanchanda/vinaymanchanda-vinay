@@ -1,14 +1,13 @@
 import Container from "./components/container";
 
-
-
+import "./App.css";
 
 function App() {
   return (
     <div>
-      <Container/>
+      <Container />
     </div>
   );
 }
 
-export default App;
+export default App;

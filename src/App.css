@@ -2,16 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bottom-element {
+  display: flex;
+  /* justify-content: space-between; */
 }
+
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
 
 .App-header {
   background-color: #282c34;
@@ -42,11 +46,39 @@
   display: flex;
 }
 
+.title-wrapper {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .dummy-title {
   flex: 1;
   padding: 20px;
 }
+
+.content-wrapper {
+  width: auto;
+  height: auto;
+  margin-right: 16px;
+
+}
+
+.media-wrapper {
+  width: 100%; /* Make the image fill the container horizontally */
+  height: auto; /* Preserve the aspect ratio of the image */
+  display: block; /* Remove any extra spacing below the image */
+}
+
+.media-main-wrapper {
+  width: 300px; /* Set the desired width of the container */
+  height: 200px; /* Set the desired height of the container */
+  overflow: hidden; /* Hide any overflowing content */
+}.me
 
 .card {
   height: 100%;
@@ -78,3 +110,8 @@
     rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
+
+.newcard {
+  width: fit-content;
+  max-width:700px;
+}
