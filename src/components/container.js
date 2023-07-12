@@ -3,7 +3,7 @@ import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 //import YouTubeCard from "./youtubeCard";
 
 const Container = () => {
-  const [click, setClick] = useState(false);
+  const [clickArray, setClickArray] = useState([]);
   const videoRef = useRef(null);
 
   const mediaArray = [
@@ -33,34 +33,43 @@ const Container = () => {
     }
   }, []);
 
+  const handleIconClick = (index) => {
+    const updatedClickArray = [...clickArray];
+    updatedClickArray[index] = !updatedClickArray[index];
+    setClickArray(updatedClickArray);
+  };
+
   return (
     <div className="">
       {mediaArray.map((media, index) => {
+        const isClicked = clickArray[index] || false;
+
         return (
           <div className="newcard m-2 p-3 border border-dark">
             <div className="bottom-element">
               <div className="content-wrapper">
                 <div>
-                  {click ? (
+                {isClicked ? (
                     <AiFillHeart
                       size={22}
-                      className="cursor-pointer absolute right-2 top-5 "
-                      onClick={() => setClick(!click)}
-                      color={click ? "red" : "#333"}
+                      className="cursor-pointer absolute right-2 top-5"
+                      onClick={() => handleIconClick(index)}
+                      color="red"
                       title="Remove from favourite"
                     />
                   ) : (
                     <AiOutlineHeart
                       size={22}
                       className="cursor-pointer absolute right-2 top-5"
-                      onClick={() => setClick(!click)}
-                      color={click ? "red" : "#333"}
+                      onClick={() => handleIconClick(index)}
+                      color="#333"
                       title="Add to favourite"
                     />
                   )}
                 </div>
                 <div className="media-main-wrapper">
                   {media.type === "image" ? (
+                    
                     <img
                       className="media-wrapper"
                       src={media.url}
